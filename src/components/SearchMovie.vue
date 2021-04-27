@@ -2,7 +2,7 @@
   
   <v-container class=" mt-6">
       <v-card
-        class="mx-auto "
+        class="mx-auto"
         max-width="1200"
       >
       <v-row class="mx-4 mt-4 d-flex">
@@ -32,7 +32,7 @@
       <v-row class="mx-4 d-flex">
         <v-col>
         <v-card-title class=" text-center"> 
-          <span class=" yellow--text py-1 px-1 rounded "> Movie: {{movie.Title}}</span>
+          <span class=" yellow--text py-1 px-1 rounded ">{{movie.Title}}</span>
           
         </v-card-title>
         <v-card-text class="font-weight-Light white-white--text">
@@ -56,12 +56,32 @@
           max-width="400"
           :src="movie.Poster"
           class="mr-4"
-          v-model="movieImg"
         > 
         </v-img>
-            </v-row>
+      </v-row>
       </v-card>
       <ListMovies/>
+
+      <template>
+  <div class="text-center ma-2">
+    <v-snackbar
+      v-model="snackbar"
+    >
+      {{ text }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          color="yellow"
+          text
+          v-bind="attrs"
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </template>
+    </v-snackbar>
+  </div>
+</template>
   </v-container>   
 </template>
 
@@ -77,6 +97,8 @@ const apiKey = '&apikey=87a9386d';
     data: () => ({
       movie: "",
       inputMovie: "",
+      snackbar: false,
+      text: "",
     }),
 
     components: {
@@ -110,11 +132,11 @@ const apiKey = '&apikey=87a9386d';
           poster: this.movie.Poster,
           })
           console.log(this.moviesSaved);
-          this.inputMovie = "";  
-          this.movieImg.width="0";   
+          this.inputMovie = "";   
           }
           else {
-            alert("Choose a movie")
+            this.snackbar = true;
+            this.text = "Please Search one movie"
           }
           
         }

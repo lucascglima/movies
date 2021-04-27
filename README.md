@@ -1,4 +1,5 @@
-# movies
+# Movies
+# This application are building use Vue, Vuex, Vuetify, Vue-cli 
 
 ## Project setup
 ```
