@@ -1,13 +1,11 @@
 <template>
-
-  <v-main>
-    <router-view>
-    </router-view>
-  </v-main>
+<v-app>
+  <SearchMovie></SearchMovie>
+</v-app>
 </template>
 
 <script>
-
+import SearchMovie from './components/SearchMovie'
 
 export default {
 
@@ -15,5 +13,12 @@ export default {
   data: () => ({
     //
   }),
+
+  components: {
+    SearchMovie,
+  }
 };
 </script>
+<style>
+
+</style>

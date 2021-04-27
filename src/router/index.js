@@ -6,8 +6,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Movies',
-    component: () => import(/*"Movies" */ '../components/Movies.vue')
+    name: 'SearchMovie',
+    component: () => import(/*"SearchMovie" */ '../components/SearchMovie.vue')
   },
 ]
 
