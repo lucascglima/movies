@@ -1,6 +1,7 @@
 <template> 
   
   <v-container class=" mt-6">
+    
       <v-card
         class="mx-auto"
         max-width="1200"
@@ -62,7 +63,6 @@
       </v-card>
       <ListMovies/>
 
-      <template>
   <div class="text-center ma-2">
     <v-snackbar
       v-model="snackbar"
@@ -74,16 +74,17 @@
           color="yellow"
           text
           v-bind="attrs"
-          @click="snackbar = false"
+        s
         >
           Close
         </v-btn>
       </template>
     </v-snackbar>
   </div>
+    </v-container>   
 </template>
-  </v-container>   
-</template>
+
+
 
 <script>
 import axios from "axios";
